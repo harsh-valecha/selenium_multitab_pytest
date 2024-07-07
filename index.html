@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Window Communication</title>
+    <script>
+        function openNewTab() {
+            let text = document.getElementById('textField').value;
+            let newWindow = window.open('', '_blank');
+            newWindow.document.write('<html><head><title>New Tab</title></head><body>');
+            newWindow.document.write('<p id="displayText">' + text + '</p>');
+            newWindow.document.write('</body></html>');
+        }
+    </script>
+</head>
+<body>
+    <h1>Window Communication Example</h1>
+    <input type="text" id="textField" placeholder="Enter text here">
+    <button onclick="openNewTab()">Send to New Tab</button>
+</body>
+</html>
